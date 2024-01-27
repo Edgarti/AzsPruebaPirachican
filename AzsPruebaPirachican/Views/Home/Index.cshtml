@@ -1,0 +1,63 @@
+﻿@model IEnumerable< AzsPruebaPirachican.Models.LibrosModel >
+
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+
+<div class="alert alert-success">
+
+	<div class="row">
+		<div class="col-sm-8">
+			<h1><strong>Listado de libros</strong></h1>
+		</div>
+		<div class="col-sm-2">
+			<button type="button" class="btn btn-primary"
+					onclick="window.location.href='/libros'">
+				Crear Libro
+			</button>
+		</div>
+		<div class="col-sm-2">
+			<button type="button" class="btn btn-primary"
+					onclick="window.location.href='/Autores'">
+					Crear Autor</button>
+		</div>
+	</div>
+
+	<div class="container mt-3">
+
+		<table  id="tablaLibros"class="table table-striped" >
+			<thead>
+				<tr>
+					<th>Codigo</th>
+					<th>Autor</th>
+					<th>Titulo </th>
+					<th>estado </th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (LibrosModel item in @Model)
+				{
+					<tr>
+						<td>@item.libroID</td>
+						<td>@item.AutorID</td>
+						<td>@item.titulo</td>
+						<td>@item.estado</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+
+
+		
+	</div>
+
+
+
+
+
+</div>
+
+@section Scripts{
+@*<script src="~/js/libro.js"></script>*@
+}

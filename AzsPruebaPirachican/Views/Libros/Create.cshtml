@@ -1,0 +1,42 @@
+﻿@model IEnumerable< AzsPruebaPirachican.Models.AutoresModel >
+
+
+@{
+    ViewData["Title"] = "Libros";
+}
+
+<div class="alert alert-success">
+
+	<div class="row">
+		<div class="col-sm-8">
+			<h1><strong>Agregar libros</strong></h1>
+		</div>	
+
+		<form method="post" action="Libros/Create">
+			
+			<div class="md-3" style="padding-top:10px">
+				<label for="validationDefault01" class="form-label">Titulo del Libro</label>
+				<input type="text" class="form-control" name ="tit" id="validationDefault01" value="" required>
+			</div>
+			
+			<div class="mb-3" style="padding-top:10px">
+				<label for="validationDefault01" class="form-label">Autor del Libro</label>
+				<select id="selectAutores" name="selAutor" class="form-select form-select-sm" aria-label=".form-select-sm example">
+					<option selected>Choose...</option>
+					@foreach (AutoresModel item in @Model)
+					{
+						<option value=@item.autorID>@item.nombre</option>
+					}
+				</select>
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Enviar datos</button>
+		</form>
+
+
+	</div>
+</div>
+
+@section Scripts{
+	<script src="~/js/autor.js"></script>
+}

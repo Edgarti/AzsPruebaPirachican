@@ -1,0 +1,35 @@
+﻿@model IEnumerable< AzsPruebaPirachican.Models.AutoresModel>
+@{
+
+}
+
+@{
+	ViewData["Title"] = "Autores";
+}
+
+<div class="alert alert-success">
+
+	<div class="row">
+		<div class="col-sm-8">
+			<h1><strong>Agregar Autores</strong></h1>
+
+		</div>
+
+		<form method="post" action="Autores/Create">
+			<div class="md-3" style="padding-top:10px">
+				<label for="validationDefault01" class="form-label">Nombre del autor</label>
+				<input type="text" class="form-control" name="aut" id="validationDefault01" value="" required>
+			</div>
+			<div class="md-3" style="padding-top:10px">
+				<button type="submit" class="btn btn-primary">Enviar datos</button>
+				<button type="button" class="btn btn-success"
+						onclick="window.location.href='/home'">
+					Anterior
+				</button>
+			</div>
+
+		</form>
+
+
+	</div>
+</div>
